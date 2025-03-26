@@ -1,0 +1,282 @@
+@use './mixins.scss' as *;
+
+@mixin display1 {
+	font-weight: 700;
+	font-size: rem(72);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin display1-reg {
+	@include display1;
+	font-weight: 400;
+}
+
+@mixin display2 {
+	font-weight: 600;
+	font-size: rem(48);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin display2-reg {
+	@include display2;
+	font-weight: 400;
+}
+
+@mixin header1 {
+	font-weight: 800;
+	font-size: rem(56);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin header1-reg {
+	@include header1;
+	font-weight: 400;
+}
+
+@mixin header2 {
+	font-weight: 800;
+	font-size: rem(48);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin header2-reg {
+	@include header2;
+	font-weight: 400;
+}
+
+@mixin header3 {
+	font-weight: 800;
+	font-size: rem(40);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin header3-reg {
+	@include header3;
+	font-weight: 400;
+}
+
+@mixin header4 {
+	font-weight: 800;
+	font-size: rem(32);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin header4-reg {
+	@include header4;
+	font-weight: 400;
+}
+
+@mixin header5 {
+	font-weight: 800;
+	font-size: rem(24);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin header5-reg {
+	@include header5;
+	font-weight: 400;
+}
+
+@mixin header6 {
+	font-weight: 800;
+	font-size: rem(18);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin header6-reg {
+	@include header6;
+	font-weight: 400;
+}
+
+@mixin xlarge-regular {
+	font-weight: 400;
+	font-size: rem(24);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: rem(40);
+}
+
+@mixin xlarge-light {
+	@include xlarge-regular;
+	font-weight: 300;
+}
+
+@mixin xlarge-medium {
+	@include xlarge-regular;
+	font-weight: 500;
+}
+
+@mixin xlarge-bold {
+	@include xlarge-regular;
+	font-weight: 800;
+}
+
+@mixin xlarge-underline {
+	@include xlarge-regular;
+	text-decoration: underline;
+}
+
+@mixin large-regular {
+	font-weight: 400;
+	font-size: rem(18);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: rem(24);
+}
+
+@mixin large-light {
+	@include large-regular;
+	font-weight: 300;
+}
+
+@mixin large-medium {
+	@include large-regular;
+	font-weight: 500;
+}
+
+@mixin large-bold {
+	@include large-regular;
+	font-weight: 800;
+}
+
+@mixin large-underline {
+	@include large-regular;
+	text-decoration: underline;
+}
+
+@mixin body-regular {
+	font-weight: 400;
+	font-size: rem(16);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin body-light {
+	@include body-regular;
+	font-weight: 300;
+}
+
+@mixin body-medium {
+	@include body-regular;
+	font-weight: 500;
+}
+
+@mixin body-bold {
+	@include body-regular;
+	font-weight: 800;
+}
+
+@mixin body-underline {
+	@include body-regular;
+	text-decoration: underline;
+}
+
+@mixin small-regular {
+	font-weight: 400;
+	font-size: rem(14);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin small-light {
+	@include small-regular;
+	font-weight: 300;
+}
+
+@mixin small-medium {
+	@include small-regular;
+	font-weight: 500;
+}
+
+@mixin small-bold {
+	@include small-regular;
+	font-weight: 800;
+}
+
+@mixin small-underline {
+	@include small-regular;
+	text-decoration: underline;
+}
+
+@mixin xsmall-regular {
+	font-weight: 400;
+	font-size: rem(12);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+}
+
+@mixin xsmall-light {
+	@include xsmall-regular;
+	font-weight: 300;
+}
+
+@mixin xsmall-medium {
+	@include xsmall-regular;
+	font-weight: 500;
+}
+
+@mixin xsmall-bold {
+	@include xsmall-regular;
+	font-weight: 800;
+}
+
+@mixin xsmall-underline {
+	@include xsmall-regular;
+	text-decoration: underline;
+}
+
+@mixin tag-regular {
+	font-weight: 400;
+	font-size: rem(12);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: normal;
+	text-transform: uppercase;
+}
+
+@mixin tag-medium {
+	@include tag-regular;
+	font-weight: 500;
+}
+
+@mixin tag-bold {
+	@include tag-regular;
+	font-weight: 800;
+}
+
+// No design system
+
+@mixin button {
+	font-weight: 700;
+	font-size: rem(16);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: rem(20);
+}
+
+@mixin button-small {
+	font-weight: 700;
+	font-size: rem(14);
+	font-family: 'Avenir', sans-serif;
+	font-style: normal;
+	line-height: rem(18);
+}
