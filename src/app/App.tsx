@@ -5,7 +5,7 @@ import './styles/root-variables.scss'
 import './App.css'
 
 function App() {
-	return <>ERIT CIBUS</>
+	return <h1>ERIT CIBUS</h1>
 }
 
 export default App
