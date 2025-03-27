@@ -1,10 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'path'
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 
-// https://vite.dev/config/
 export default defineConfig({
-	plugins: [react()],
+	plugins: [TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), react()],
 	resolve: {
 		alias: [
 			{ find: 'src', replacement: `${__dirname}/src` },
@@ -12,15 +11,11 @@ export default defineConfig({
 			{ find: 'app', replacement: `${__dirname}/src/app` },
 			{ find: 'styles', replacement: `${__dirname}/src/styles` },
 			{ find: 'utils', replacement: `${__dirname}/src/utils` },
-			{ find: 'models', replacement: `${__dirname}/src/models` }
+			{ find: 'models', replacement: `${__dirname}/src/models` },
+			{ find: 'mock', replacement: `${__dirname}/src/mock` },
+			{ find: 'routes', replacement: `${__dirname}/src/routes` },
+			{ find: 'ui', replacement: `${__dirname}/src/ui` }
 		]
-		// alias: {
-		// 	app: path.resolve(__dirname, 'src/app'),
-		// 	styles: path.resolve(__dirname, 'src/styles'),
-		// 	assets: path.resolve(__dirname, 'src/assets'),
-		// 	utils: path.resolve(__dirname, 'src/utils'),
-		// 	models: path.resolve(__dirname, 'src/models')
-		// }
 	},
 	css: {
 		preprocessorOptions: {

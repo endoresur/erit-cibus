@@ -30,7 +30,10 @@
 	flex-direction: column;
 
 	width: 100%;
+	max-width: $desktop;
 	min-height: 100vh;
+
+	margin: 0 auto;
 }
 
 html {
@@ -101,6 +104,12 @@ ul {
 a {
 	color: var(--text-primary);
 	text-decoration: none;
+
+	transition: color 200ms ease;
+}
+
+a:hover {
+	color: var(--blue200);
 }
 
 h1 {

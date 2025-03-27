@@ -1,11 +1,19 @@
+import { StrictMode } from 'react'
+import { RouterProvider } from '@tanstack/react-router'
+
+import './styles/colors.scss'
 import './styles/fonts.scss'
 import './styles/global.scss'
 import './styles/normalize.css'
 import './styles/root-variables.scss'
-import './App.css'
+import { router } from './constants/router'
 
 function App() {
-	return <h1>ERIT CIBUS</h1>
+	return (
+		<StrictMode>
+			<RouterProvider router={router} />
+		</StrictMode>
+	)
 }
 
 export default App

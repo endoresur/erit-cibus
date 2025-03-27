@@ -4,7 +4,7 @@
 	"compilerOptions": {
 		"jsx": "react-jsx",
 		"target": "ES2022",
-		"lib": ["ES2023"],
+		"lib": ["ES2023", "DOM"],
 		"module": "ESNext",
 		"skipLibCheck": true,
 
@@ -28,7 +28,10 @@
 			"assets/*": ["assets/*"],
 			"styles/*": ["styles/*"],
 			"models/*": ["models/*"],
-			"utils/*": ["utils/*"]
+			"utils/*": ["utils/*"],
+			"mock/*": ["mock/*"],
+			"routes/*": ["routes/*"],
+			"ui/*": ["ui/*"]
 		}
 	}
 }

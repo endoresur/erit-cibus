@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@eslint/js": "9.21.0",
+    "@tanstack/react-router-devtools": "^1.114.27",
+    "@tanstack/router-plugin": "^1.114.27",
     "@types/node": "22.13.13",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
@@ -38,7 +40,7 @@
     "eslint-plugin-react-refresh": "0.4.19",
     "globals": "15.15.0",
     "prettier": "3.5.3",
-    "sass": "1.86.0",
+    "sass": "^1.86.0",
     "typescript": "5.8.2",
     "typescript-eslint": "8.24.1",
     "vite": "6.2.0"
