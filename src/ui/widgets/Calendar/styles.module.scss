@@ -1,0 +1,12 @@
+.calendarRoot {
+	width: 100%;
+
+	.title {
+		text-align: end;
+	}
+
+	.calendarGrid {
+		display: grid;
+		grid-template-columns: repeat(1fr, 7);
+	}
+}
