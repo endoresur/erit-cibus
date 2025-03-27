@@ -11,7 +11,10 @@ export default defineConfig({
 			{ find: 'app', replacement: `${__dirname}/src/app` },
 			{ find: 'styles', replacement: `${__dirname}/src/styles` },
 			{ find: 'utils', replacement: `${__dirname}/src/utils` },
-			{ find: 'models', replacement: `${__dirname}/src/models` }
+			{ find: 'models', replacement: `${__dirname}/src/models` },
+			{ find: 'mock', replacement: `${__dirname}/src/mock` },
+			{ find: 'routes', replacement: `${__dirname}/src/routes` },
+			{ find: 'ui', replacement: `${__dirname}/src/ui` }
 		]
 	},
 	css: {

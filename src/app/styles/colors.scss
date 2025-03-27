@@ -1,0 +1,50 @@
+:root {
+	// Grey
+	--grey900: #002c41;
+	--grey800: #325567;
+	--grey700: #4d6b7a;
+	--grey600: #66808d;
+	--grey500: #8096a0;
+	--grey400: #99abb3;
+	--grey300: #b3c0c6;
+	--grey200: #ccd5d9;
+	--grey100: #e6eaec;
+
+	// Blue
+	--blue900: #2a61db;
+	--blue800: #5581e2;
+	--blue700: #6a90e6;
+	--blue600: #7fa0e9;
+	--blue500: #95b0ed;
+	--blue400: #aac0f1;
+	--blue300: #bfd0f4;
+	--blue200: #d4dff8;
+	--blue100: #eaeffb;
+	--blue50: #f4f7fe;
+
+	// Others
+	--white: #fff;
+
+	--text-primary: var(--grey100);
+
+	// Aliases
+	--primary900: var(--grey900);
+	--primary800: var(--grey800);
+	--primary700: var(--grey700);
+	--primary600: var(--grey600);
+	--primary500: var(--grey500);
+	--primary400: var(--grey400);
+	--primary300: var(--grey300);
+	--primary200: var(--grey200);
+	--primary100: var(--grey100);
+
+	--secondary900: var(--blue900);
+	--secondary800: var(--blue800);
+	--secondary700: var(--blue700);
+	--secondary600: var(--blue600);
+	--secondary500: var(--blue500);
+	--secondary400: var(--blue400);
+	--secondary300: var(--blue300);
+	--secondary200: var(--blue200);
+	--secondary100: var(--blue100);
+}

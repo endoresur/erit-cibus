@@ -1,12 +1,11 @@
-$desktop: calc(1280px + 2 * var(--container-padding));
-
 // App support only desktop version. Breakpoint is only for correct rem function
+$desktop: 1920px;
 $mobile: 768px;
 $tablet: 1024px;
 
 /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
 :export {
-  desktop: $desktop;
-  tablet: $tablet;
-  mobile: $mobile;
+	desktop: $desktop;
+	tablet: $tablet;
+	mobile: $mobile;
 }
