@@ -1,2 +1,17 @@
 .calendarCellRoot {
+	padding: var(--spacing-x2);
+	border: rem(2) solid var(--blue300);
+
+	width: 100%;
+
+	.header {
+		.day {
+			@include header6;
+
+			color: var(--blue600);
+		}
+
+		.weekDay {
+		}
+	}
 }
