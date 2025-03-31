@@ -1,0 +1,14 @@
+.cellHeaderRoot {
+	display: flex;
+	align-items: baseline;
+	gap: rem(8);
+
+	.day {
+		@include header6;
+		color: var(--blue600);
+	}
+
+	.weekDay {
+		display: block;
+	}
+}

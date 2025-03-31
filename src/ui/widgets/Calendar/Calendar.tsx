@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import CalendarCell from './ui/CalendarCell'
+import CalendarCell from '../CalendarCell'
 import { getWeekDayByIndex, getWeekDayIndexByDate } from 'utils/datetime'
 import { cc } from 'utils/combineClasses'
 

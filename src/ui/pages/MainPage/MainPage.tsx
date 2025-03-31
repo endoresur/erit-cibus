@@ -1,11 +1,16 @@
 import Calendar from 'ui/widgets/Calendar'
 import styles from './styles.module.scss'
+import CalendarCell from 'ui/widgets/CalendarCell'
 
 const MainPage = () => {
 	return (
-		<section className={styles.mainPageRoot}>
+		<main className={styles.mainPageRoot}>
 			<Calendar />
-		</section>
+
+			<div style={{ marginTop: '200px' }}>
+				<CalendarCell date="12-20-2000" />
+			</div>
+		</main>
 	)
 }
 

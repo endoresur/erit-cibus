@@ -1,5 +1,5 @@
 import { isValid, set } from 'date-fns'
-import { WeekDays } from 'ui/widgets/Calendar/types'
+import { WeekDays } from 'types/calendar'
 
 export const joinDatetimeISO = (date: Date, time: Date) => {
 	const isValidDate = isValid(date)
