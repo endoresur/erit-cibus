@@ -10,7 +10,7 @@
 		grid-template-columns: repeat(7, 1fr);
 		grid-template-rows: repeat(6, auto);
 		grid-template-areas: 'mon tue wed thu fri sat sun';
-		gap: rem(5);
+		// gap: rem(5);
 
 		.mon {
 			grid-area: mon;

@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
-import CalendarCell from '../CalendarCell'
 import { getWeekDayByIndex, getWeekDayIndexByDate } from 'utils/datetime'
 import { cc } from 'utils/combineClasses'
+import DayCard from '../DayCard'
 
 const Calendar = () => {
 	const month = new Array(31).fill('').map((_, index) => `3-${index + 1}-2025`)
@@ -31,7 +31,7 @@ const Calendar = () => {
 
 			<div className={styles.calendarGrid}>
 				{month.map(day => (
-					<CalendarCell date={day} className={getCellPositionClassName(day)} />
+					<DayCard date={day} className={getCellPositionClassName(day)} rounded={false} />
 				))}
 			</div>
 		</div>

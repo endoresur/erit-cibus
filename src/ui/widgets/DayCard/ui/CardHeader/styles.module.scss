@@ -1,4 +1,4 @@
-.cellHeaderRoot {
+.cardHeaderRoot {
 	display: flex;
 	align-items: baseline;
 	gap: rem(8);
@@ -10,5 +10,19 @@
 
 	.weekDay {
 		display: block;
+	}
+}
+
+.variant {
+	&_small {
+	}
+
+	&_default {
+	}
+
+	&_large {
+	}
+
+	&_cell {
 	}
 }
