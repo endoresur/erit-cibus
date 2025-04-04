@@ -3,26 +3,48 @@
 	align-items: baseline;
 	gap: rem(8);
 
-	.day {
-		@include header6;
-		color: var(--blue600);
+	border-bottom: rem(2) solid var(--grey500);
+
+	.headerTitle {
+		display: flex;
+		align-items: center;
+
+		gap: rem(8);
 	}
 
-	.weekDay {
+	.day {
 		display: block;
+
+		color: var(--blue400);
 	}
 }
 
-.variant {
-	&_small {
-	}
-
+header.variant {
 	&_default {
+		padding: var(--spacing-base) var(--spacing-x2);
+
+		.day {
+			@include header5;
+		}
+
+		.dayEvent {
+			@include large-bold;
+			line-height: normal;
+		}
 	}
 
 	&_large {
 	}
 
 	&_cell {
+		padding: var(--spacing-base);
+
+		.day {
+			@include header6;
+		}
+
+		.dayEvent {
+			@include body-bold;
+		}
 	}
 }

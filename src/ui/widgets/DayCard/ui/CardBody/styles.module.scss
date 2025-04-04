@@ -3,15 +3,29 @@
 }
 
 .variant {
-	&_small {
-	}
-
 	&_default {
+		padding: var(--spacing-base) var(--spacing-x2);
 	}
 
 	&_large {
 	}
 
 	&_cell {
+		padding: var(--spacing-base);
 	}
+}
+
+.cellBody {
+	.mainMeal {
+		@include body-bold;
+		margin-bottom: rem(12);
+	}
+
+	.mainNote {
+		@include tag-bold;
+		height: rem(16);
+	}
+}
+
+.defaultBody {
 }

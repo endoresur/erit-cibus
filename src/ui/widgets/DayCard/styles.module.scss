@@ -11,11 +11,6 @@
 }
 
 .variant {
-	&_small {
-		width: rem(250);
-		height: rem(445);
-	}
-
 	&_default {
 		width: rem(400);
 		height: rem(711);
@@ -38,15 +33,14 @@
 
 	border-radius: inherit;
 	overflow: hidden;
+}
 
-	.header,
-	.section,
-	.footer {
-		padding: var(--spacing-base);
-		background-color: var(--grey800);
-	}
+.header,
+.section,
+.footer {
+	background-color: var(--grey800);
+}
 
-	.section {
-		flex: 1;
-	}
+.section {
+	flex: 1;
 }

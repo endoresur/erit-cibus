@@ -1,19 +1,23 @@
-import { getWeekDayByIndex, getWeekDayIndexByDate } from 'utils/datetime'
 import styles from './styles.module.scss'
-import { weekDaysNames } from 'types/calendar'
 import { cc } from 'utils/combineClasses'
-import { DayeCardBaseProps } from '../../types'
+import { DayCardVariant, DayEvent } from '../../types'
 
-interface Props extends DayeCardBaseProps {}
+interface Props {
+	date: string
+	variant?: DayCardVariant
+	dayEvent?: DayEvent
+	className?: string
+}
 
-const CardHeader = ({ date, variant, className }: Props) => {
+const CardHeader = ({ date, variant = DayCardVariant.DEFAULT, dayEvent, className }: Props) => {
 	const day = new Date(date).getDate()
-	const weekDay = getWeekDayByIndex(getWeekDayIndexByDate(date))
 
 	return (
 		<header className={cc(styles.cardHeaderRoot, styles[`variant_${variant}`], className)}>
-			<time className={styles.day}>{day}</time>
-			{weekDay && <time className={styles.weekDay}>{weekDaysNames[weekDay]}</time>}
+			<div className={styles.headerTitle}>
+				<time className={styles.day}>{day}</time>
+				{dayEvent?.title && <p className={styles.dayEvent}>{dayEvent?.title}</p>}
+			</div>
 		</header>
 	)
 }

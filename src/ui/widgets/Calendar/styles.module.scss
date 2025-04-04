@@ -3,6 +3,7 @@
 
 	.title {
 		text-align: end;
+		margin-bottom: var(--spacing-base);
 	}
 
 	.calendarGrid {
@@ -10,7 +11,19 @@
 		grid-template-columns: repeat(7, 1fr);
 		grid-template-rows: repeat(6, auto);
 		grid-template-areas: 'mon tue wed thu fri sat sun';
-		// gap: rem(5);
+
+		.dayCard {
+			padding: rem(2);
+			transition: color 200ms ease;
+
+			&:hover {
+				background-color: var(--blue600);
+			}
+		}
+
+		.isToday {
+			background-color: var(--blue900);
+		}
 
 		.mon {
 			grid-area: mon;

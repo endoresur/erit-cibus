@@ -1,7 +1,14 @@
-export type DayCardVariant = 'small' | 'default' | 'large' | 'cell'
+export enum DayCardVariant {
+	DEFAULT = 'default',
+	LARGE = 'large',
+	CELL = 'cell'
+}
 
-export interface DayeCardBaseProps {
-	date: string
-	variant?: DayCardVariant
-	className?: string
+export type DayEventType = 'event'
+
+export interface DayEvent {
+	id: string
+	type: DayEventType
+	title: string
+	description: string
 }

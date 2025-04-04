@@ -4,7 +4,7 @@ import { cc } from 'utils/combineClasses'
 import DayCard from '../DayCard'
 
 const Calendar = () => {
-	const month = new Array(31).fill('').map((_, index) => `3-${index + 1}-2025`)
+	const month = new Array(31).fill('').map((_, index) => `4-${index + 1}-2025`)
 
 	const getCellPositionClassName = (dateStr: string) => {
 		const date = new Date(dateStr)
@@ -21,8 +21,9 @@ const Calendar = () => {
 
 		const columnPositionStyles = styles[`${getWeekDayByIndex(dayOfWeekIndex)}`]
 		const rowPositionStyles = styles[`week${weekOfMonth}`]
+		const isToday = dayOfMonth === new Date().getDate()
 
-		return cc(columnPositionStyles, rowPositionStyles)
+		return cc(columnPositionStyles, rowPositionStyles, isToday && styles.isToday)
 	}
 
 	return (
@@ -30,8 +31,14 @@ const Calendar = () => {
 			<h2 className={styles.title}>Месяц</h2>
 
 			<div className={styles.calendarGrid}>
-				{month.map(day => (
-					<DayCard date={day} className={getCellPositionClassName(day)} rounded={false} />
+				{month.map((day, index) => (
+					<DayCard
+						key={index}
+						date={day}
+						className={cc(styles.dayCard, getCellPositionClassName(day))}
+						rounded={false}
+						dayEvents={[]}
+					/>
 				))}
 			</div>
 		</div>
