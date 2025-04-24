@@ -14,7 +14,8 @@ export default defineConfig({
 			{ find: 'models', replacement: `${__dirname}/src/models` },
 			{ find: 'mock', replacement: `${__dirname}/src/mock` },
 			{ find: 'routes', replacement: `${__dirname}/src/routes` },
-			{ find: 'ui', replacement: `${__dirname}/src/ui` }
+			{ find: 'ui', replacement: `${__dirname}/src/ui` },
+			{ find: 'types', replacement: `${__dirname}/src/types` }
 		]
 	},
 	css: {

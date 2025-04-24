@@ -31,7 +31,8 @@
 			"utils/*": ["utils/*"],
 			"mock/*": ["mock/*"],
 			"routes/*": ["routes/*"],
-			"ui/*": ["ui/*"]
+			"ui/*": ["ui/*"],
+			"types/*": ["types/*"]
 		}
 	}
 }
