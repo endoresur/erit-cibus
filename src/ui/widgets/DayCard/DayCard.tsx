@@ -1,72 +1,90 @@
 import styles from './styles.module.scss'
-import { RoundedSide } from '../Calendar/types'
 import { cc } from 'utils/combineClasses'
-import CardHeader from './ui/CardHeader'
-import CardBody from './ui/CardBody'
-import CardFooter from './ui/CardFooter'
-import { DayCardVariant, DayEvent } from './types'
-import { useHover } from '@uidotdev/usehooks'
 
-interface Props {
+export interface CardProps {
+	variant: 'cell' | 'default'
 	date: string
-	rounded?: boolean | RoundedSide
-	dayEvents: DayEvent[]
-	variant?: DayCardVariant
+	event: string
+	isDayOff?: boolean
+	meal?: string
+	note: string
+	breakfast?: string
+	lunch?: string
+	dinner?: string
+	shoppingList?: string[]
+	calories?: number
+	cookingTime: string
+	isAllBought: boolean
+	theme: 'light' | 'dark'
 	className?: string
 }
 
 const DayCard = ({
+	variant,
 	date,
-	variant = DayCardVariant.CELL,
-	rounded = true,
-	dayEvents,
+	event,
+	meal,
+	note,
+	breakfast,
+	lunch,
+	dinner,
+	shoppingList,
+	calories,
+	cookingTime,
+	isAllBought,
+	theme,
+	isDayOff,
 	className
-}: Props) => {
-	const [cardRef, isCardHovered] = useHover()
-
-	const showMainNote = Math.floor(Math.random() * 4) === 0
-
+}: CardProps) => {
 	return (
 		<article
-			className={cc(
-				styles.calendarCellRoot,
-				rounded && styles.isCellRounded,
-				styles[`variant_${variant}`],
-				className
-			)}
-			ref={cardRef}
+			className={cc(styles.card, styles[`card--${variant}`], styles[`card--${theme}`], className)}
 		>
-			<div className={styles.cellWrapper}>
-				<CardHeader
-					date={date}
-					className={styles.header}
-					variant={variant}
-					dayEvent={dayEvents[0]}
-				/>
+			<header className={cc(styles.cardHeader, isDayOff && styles.dayOff)}>
+				<time className={styles.date}>{new Date(date).getDate()}</time>
+				<p className={styles.event}>{event}</p>
+			</header>
 
-				<CardBody
-					mainNote={showMainNote ? 'Главная напоминалка' : ''}
-					notes={['Важное дело', 'Не очень важное дело']}
-					className={styles.section}
-					variant={variant}
-					mainMeal={{
-						label: 'Пицца',
-						caloricContent: 580,
-						cookingTime: '45m'
-					}}
-					isCardHovered={isCardHovered}
-				/>
-
-				{variant !== DayCardVariant.CELL && (
-					<CardFooter
-						className={styles.footer}
-						variant={variant}
-						caloricContent={2000}
-						cookingTime="1h 40m"
-						isIngredientsPurchased
-					/>
+			<div className={styles.cardBody}>
+				{variant === 'cell' ? (
+					<>
+						<div className={styles.meal}>🍽️ {meal}</div>
+						<div className={styles.note}>📝 {note}</div>
+					</>
+				) : (
+					<>
+						<div className={styles.plan}>
+							<div>🍳 Завтрак: {breakfast}</div>
+							<div>🥗 Обед: {lunch}</div>
+							<div>🍲 Ужин: {dinner}</div>
+						</div>
+						<div className={styles.note}>📝 {note}</div>
+						<div className={styles.shopping}>
+							<div>🛒 Список покупок:</div>
+							<ul>{shoppingList?.map((item, index) => <li key={index}>• {item}</li>)}</ul>
+						</div>
+					</>
 				)}
 			</div>
+
+			<footer className={styles.cardFooter}>
+				{variant === 'cell' ? (
+					<>
+						<div className={styles.cookingTime}>⏱️ {cookingTime}</div>
+						<div className={cc(styles.bought, styles[`bought--${isAllBought ? 'yes' : 'no'}`])}>
+							{isAllBought ? '✅ Все куплено' : '🛍️ Докупить'}
+						</div>
+					</>
+				) : (
+					<>
+						<div className={styles.calories}>🔥 Калорийность: {calories} ккал</div>
+						<div className={styles.cookingTime}>⏱️ Время: {cookingTime}</div>
+						<div className={cc(styles.bought, styles[`bought--${isAllBought ? 'yes' : 'no'}`])}>
+							{isAllBought ? '✅ Все куплено' : '🛍️ Докупить'}
+						</div>
+					</>
+				)}
+			</footer>
 		</article>
 	)
 }

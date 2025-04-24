@@ -2,10 +2,13 @@ import styles from './styles.module.scss'
 import { getWeekDayByIndex, getWeekDayIndexByDate } from 'utils/datetime'
 import { cc } from 'utils/combineClasses'
 import DayCard from '../DayCard'
+import { CardProps } from '../DayCard/DayCard'
 
-const Calendar = () => {
-	const month = new Array(31).fill('').map((_, index) => `4-${index + 1}-2025`)
+interface Props {
+	cards: CardProps[]
+}
 
+const Calendar = ({ cards }: Props) => {
 	const getCellPositionClassName = (dateStr: string) => {
 		const date = new Date(dateStr)
 
@@ -28,17 +31,13 @@ const Calendar = () => {
 
 	return (
 		<div className={styles.calendarRoot}>
-			<h2 className={styles.title}>Месяц</h2>
+			<h2 className={styles.title}>Май</h2>
 
 			<div className={styles.calendarGrid}>
-				{month.map((day, index) => (
-					<DayCard
-						key={index}
-						date={day}
-						className={cc(styles.dayCard, getCellPositionClassName(day))}
-						rounded={false}
-						dayEvents={[]}
-					/>
+				{cards.map(card => (
+					<div className={cc(styles.dayCardWrapper, getCellPositionClassName(card.date))}>
+						<DayCard {...card} variant="cell" theme="dark" className={styles.dayCard} />
+					</div>
 				))}
 			</div>
 		</div>

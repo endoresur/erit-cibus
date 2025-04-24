@@ -12,13 +12,21 @@
 		grid-template-rows: repeat(6, auto);
 		grid-template-areas: 'mon tue wed thu fri sat sun';
 
-		.dayCard {
+		.dayCardWrapper {
+			height: 100%;
 			padding: rem(2);
+			border-radius: rem(16);
 			transition: color 200ms ease;
 
 			&:hover {
 				background-color: var(--blue600);
 			}
+		}
+
+		.dayCard {
+			height: 100%;
+
+			box-shadow: none;
 		}
 
 		.isToday {
