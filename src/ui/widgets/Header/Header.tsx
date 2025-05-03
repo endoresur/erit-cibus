@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import styles from './styles.module.scss'
+import ThemeToggle from 'ui/features/ThemeToggle'
 
 const Header = () => {
 	return (
@@ -14,7 +15,7 @@ const Header = () => {
 				</Link>
 			</div>
 
-			<div />
+			<ThemeToggle className={styles.themeToglge} />
 		</header>
 	)
 }

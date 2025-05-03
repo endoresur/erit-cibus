@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
-	plugins: [TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), react()],
+	plugins: [TanStackRouterVite({ target: 'react', autoCodeSplitting: true }), react(), svgr()],
 	resolve: {
 		alias: [
 			{ find: 'src', replacement: `${__dirname}/src` },
@@ -15,7 +16,8 @@ export default defineConfig({
 			{ find: 'mock', replacement: `${__dirname}/src/mock` },
 			{ find: 'routes', replacement: `${__dirname}/src/routes` },
 			{ find: 'ui', replacement: `${__dirname}/src/ui` },
-			{ find: 'types', replacement: `${__dirname}/src/types` }
+			{ find: 'types', replacement: `${__dirname}/src/types` },
+			{ find: 'constants', replacement: `${__dirname}/src/constants` }
 		]
 	},
 	css: {
