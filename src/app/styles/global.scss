@@ -1,5 +1,6 @@
 @use 'styles/mixins/index.scss' as *;
 @use 'styles/variables/breakpoints.module.scss' as *;
+@use './colors.scss' as *;
 
 :root {
 	// Root resolution: 1920px;
@@ -12,8 +13,6 @@
 	direction: ltr;
 
 	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
 }
 
 *,
@@ -38,6 +37,9 @@
 
 html {
 	overflow-x: hidden;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	border-color: var(--border-color);
 }
 
 body {
@@ -102,7 +104,7 @@ ul {
 }
 
 a {
-	color: var(--text-primary);
+	color: var(--blue900);
 	text-decoration: none;
 
 	transition: color 200ms ease;
@@ -145,49 +147,6 @@ fieldset {
 	direction: rtl;
 }
 
-.custom-swiper-pagination,
-.custom-swiper-pagination-light {
-	.swiper-pagination-bullet {
-		width: 24px;
-		height: 8px;
-		margin-inline-end: var(--spacing-x2);
-
-		border-radius: 4px;
-
-		background-color: var(--primary-first-500);
-
-		transition: 300ms width;
-
-		@include mobile {
-			width: 16px;
-			height: 4px;
-			margin-inline-end: var(--spacing-base);
-
-			border-radius: 2px;
-		}
-	}
-
-	.swiper-pagination-bullet-active {
-		width: 40px;
-
-		background-color: var(--primary-first-900);
-
-		@include mobile {
-			width: 24px;
-		}
-	}
-}
-
-.custom-swiper-pagination-light {
-	.swiper-pagination-bullet {
-		background-color: var(--blue700);
-	}
-
-	.swiper-pagination-bullet-active {
-		background-color: var(--white);
-	}
-}
-
 .error,
 .success-message {
 	@include small-regular;
@@ -199,11 +158,11 @@ fieldset {
 }
 
 .error {
-	color: var(--secondary-second-700);
+	color: var(--error);
 }
 
 .success-message {
-	color: var(--primary-first-900);
+	color: var(--success);
 }
 
 .visually-hidden {

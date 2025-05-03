@@ -1,51 +1,63 @@
-:root {
-	// Gray
-	--grey900: #121212;
-	--grey800: #1a1a1a;
-	--grey700: #222222;
-	--grey600: #2c2c2c;
-	--grey500: #383838;
-	--grey400: #505050;
-	--grey300: #6b6b6b;
-	--grey200: #858585;
-	--grey100: #a0a0a0;
-	--grey50: #bcbcbc;
+html[data-theme='light'] {
+	--gray50: #f9fafb;
+	--gray100: #f3f4f6;
+	--gray200: #e5e7eb;
+	--gray300: #d1d5db;
+	--gray400: #9ca3af;
+	--gray500: #6b7280;
+	--gray600: #4b5563;
+	--gray700: #374151;
+	--gray800: #1f2937;
+	--gray900: #111827;
 
-	// Blue
+	--blue100: #e1e9fb;
+	--blue200: #c3d3f7;
+	--blue300: #a4bdf2;
+	--blue400: #85a7ee;
+	--blue500: #6691ea;
+	--blue600: #4f7cde;
+	--blue700: #3f68c1;
+	--blue800: #3055a2;
 	--blue900: #2a61db;
-	--blue800: #5581e2;
-	--blue700: #6a90e6;
-	--blue600: #7fa0e9;
-	--blue500: #95b0ed;
-	--blue400: #aac0f1;
-	--blue300: #bfd0f4;
-	--blue200: #d4dff8;
-	--blue100: #eaeffb;
-	--blue50: #f4f7fe;
 
-	// Others
-	--white: #fff;
+	--success: #22c55e;
+	--warning: #f59e0b;
+	--error: #ef4444;
 
-	--text-primary: var(--grey100);
+	--bg-color: rgb(243, 244, 246);
+	--card-bg: #f9fafb;
+	--text-color: #111827;
+	--border-color: #e5e7eb;
+}
 
-	// Aliases
-	--primary900: var(--grey900);
-	--primary800: var(--grey800);
-	--primary700: var(--grey700);
-	--primary600: var(--grey600);
-	--primary500: var(--grey500);
-	--primary400: var(--grey400);
-	--primary300: var(--grey300);
-	--primary200: var(--grey200);
-	--primary100: var(--grey100);
+html[data-theme='dark'] {
+	--gray50: #181a1f;
+	--gray100: #1f2228;
+	--gray200: #262a30;
+	--gray300: #2d323a;
+	--gray400: #4b5563;
+	--gray500: #6b7280;
+	--gray600: #9ca3af;
+	--gray700: #d1d5db;
+	--gray800: #e5e7eb;
+	--gray900: #f9fafb;
 
-	--secondary900: var(--blue900);
-	--secondary800: var(--blue800);
-	--secondary700: var(--blue700);
-	--secondary600: var(--blue600);
-	--secondary500: var(--blue500);
-	--secondary400: var(--blue400);
-	--secondary300: var(--blue300);
-	--secondary200: var(--blue200);
-	--secondary100: var(--blue100);
+	--blue100: #e1e9fb;
+	--blue200: #c3d3f7;
+	--blue300: #a4bdf2;
+	--blue400: #85a7ee;
+	--blue500: #6691ea;
+	--blue600: #4f7cde;
+	--blue700: #3f68c1;
+	--blue800: #3055a2;
+	--blue900: #2a61db;
+
+	--success: #22c55e;
+	--warning: #fbbf24;
+	--error: #f87171;
+
+	--bg-color: #1f2228;
+	--card-bg: #2d323a;
+	--text-color: #f9fafb;
+	--border-color: #262a30;
 }

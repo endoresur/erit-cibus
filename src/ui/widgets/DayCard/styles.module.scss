@@ -24,6 +24,10 @@
 	border-radius: rem(16);
 	overflow: hidden;
 
+	background-color: var(--card-bg);
+	color: var(--text-color);
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+
 	transition:
 		box-shadow 0.3s ease,
 		background-color 0.3s ease,
@@ -35,6 +39,10 @@
 
 	&--deafault {
 		font-size: rem(14);
+	}
+
+	.dayOff .date {
+		color: var(--gray900);
 	}
 
 	.cardHeader,
@@ -49,6 +57,11 @@
 	.cardHeader {
 		flex-direction: row;
 		padding: rem(8) rem(12) rem(6);
+		border-bottom: 1px solid var(--border-color);
+	}
+
+	.cardFooter {
+		border-top: 1px solid var(--border-color);
 	}
 
 	.dayOff {
@@ -57,58 +70,11 @@
 
 	.date {
 		font-weight: 600;
+		color: var(--blue900);
 	}
 
 	.event {
 		font-weight: bold;
-	}
-
-	// ---------- THEME: Light ----------
-	&--light {
-		background-color: #f2f2f7;
-		color: #1c1c1e;
-		box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-
-		.date {
-			color: var(--blue900);
-		}
-
-		.dayOff .date {
-			color: var(--grey900);
-		}
-
-		.cardHeader {
-			border-bottom: 1px solid #d1d1d6;
-		}
-
-		.cardFooter {
-			border-top: 1px solid #d1d1d6;
-			color: #3a3a3c;
-		}
-	}
-
-	// ---------- THEME: Dark ----------
-	&--dark {
-		background-color: #1c1c1e;
-		color: #f2f2f7;
-		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
-
-		.date {
-			color: var(--blue700);
-		}
-
-		.dayOff .date {
-			color: var(--text);
-		}
-
-		.cardHeader {
-			border-bottom: 1px solid #2c2c2e;
-		}
-
-		.cardFooter {
-			border-top: 1px solid #2c2c2e;
-			color: #a1a1a6;
-		}
 	}
 
 	// ---------- BREAKPOINTS ----------

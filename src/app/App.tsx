@@ -9,13 +9,16 @@ import './styles/root-variables.scss'
 import { router } from './constants/router'
 import { setDefaultOptions } from 'date-fns'
 import { ru } from 'date-fns/locale'
+import { ThemeProvider } from './context/ThemeContext'
 
 function App() {
 	setDefaultOptions({ locale: ru, weekStartsOn: 0 })
 
 	return (
 		<StrictMode>
-			<RouterProvider router={router} />
+			<ThemeProvider>
+				<RouterProvider router={router} />
+			</ThemeProvider>
 		</StrictMode>
 	)
 }

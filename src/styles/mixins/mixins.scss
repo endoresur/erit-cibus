@@ -8,6 +8,12 @@
 	@return calc($value / 16 * (-1)) + rem;
 }
 
+@mixin dark {
+	html[data-theme='dark'] & {
+		@content;
+	}
+}
+
 @mixin mobile {
 	@media (max-width: ($mobile - 1px)) {
 		@content;
@@ -59,7 +65,7 @@
 
 	scrollbar-width: thin;
 
-	scrollbar-color: var(--primary-first-500) transparent;
+	scrollbar-color: var(--border-color) transparent;
 
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -84,26 +90,26 @@
 }
 
 @mixin link {
-	color: var(--primary-second-900);
+	color: var(--blue600);
 
 	transition: color 0.2s ease;
 
 	&:focus-visible {
-		outline: rem(2) solid var(--primary-first-900);
+		outline: rem(2) solid var(--blue900);
 		outline-offset: minus-rem(2);
 	}
 
 	&:active {
-		color: var(--primary-second-900);
+		color: var(--blue900);
 	}
 
 	@include hover {
 		&:hover {
-			color: var(--primary-second-800);
+			color: var(--blue800);
 		}
 
 		&:active {
-			color: var(--primary-second-900);
+			color: var(--blue900);
 		}
 	}
 }
