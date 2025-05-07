@@ -1,32 +1,16 @@
 @use '/src/styles/index.scss' as *;
 
-// Card Preview Grid
-.card-preview {
-	display: grid;
-	gap: rem(16);
-	padding: rem(16);
-	grid-template-columns: 1fr;
-
-	@include tablet {
-		grid-template-columns: 1fr 1fr;
-	}
-
-	@include desktop {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
 .card {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 
-	border-radius: rem(16);
+	border-radius: rem(12);
 	overflow: hidden;
 
-	background-color: var(--card-bg);
+	background-color: var(--content-bg);
 	color: var(--text-color);
-	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+	// box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
 
 	transition:
 		box-shadow 0.3s ease,
@@ -42,7 +26,14 @@
 	}
 
 	.dayOff .date {
-		color: var(--gray900);
+		// color: var(--gray900);
+		// color: var(--error);
+	}
+
+	.dayOff {
+		background-color: rgb(186, 167, 246) !important;
+		// color: var(--gray900);
+		// color: var(--error);
 	}
 
 	.cardHeader,
@@ -57,7 +48,8 @@
 	.cardHeader {
 		flex-direction: row;
 		padding: rem(8) rem(12) rem(6);
-		border-bottom: 1px solid var(--border-color);
+		// border-bottom: 1px solid var(--border-color);
+		@include body-bold;
 	}
 
 	.cardFooter {
@@ -65,16 +57,21 @@
 	}
 
 	.dayOff {
-		background-color: var(--blue700);
+		// background-color: var(--blue700);
+		// color: var(--error);
 	}
 
 	.date {
-		font-weight: 600;
+		// font-weight: 600;
+		// @include body-bold;
+		// color: var(--ac-text-color);
 		color: var(--blue900);
 	}
 
 	.event {
-		font-weight: bold;
+		// font-weight: bold;
+		// color: var(--ac-text-color);
+		color: var(--blue900);
 	}
 
 	// ---------- BREAKPOINTS ----------

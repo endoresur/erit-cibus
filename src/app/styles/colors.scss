@@ -24,8 +24,10 @@ html[data-theme='light'] {
 	--warning: #f59e0b;
 	--error: #ef4444;
 
-	--bg-color: rgb(243, 244, 246);
-	--card-bg: #f9fafb;
+	--bg-color: rgba(243, 244, 246);
+	--ac-bg-color: rgb(249 250 251);
+	--ac-text-color: var(--blue900);
+	--content-bg: #fff;
 	--text-color: #111827;
 	--border-color: #e5e7eb;
 }
@@ -57,7 +59,9 @@ html[data-theme='dark'] {
 	--error: #f87171;
 
 	--bg-color: #1f2228;
-	--card-bg: #2d323a;
+	--ac-bg-color: rgb(142, 175, 246);
+	--ac-text-color: var(--blue900);
+	--content-bg: #2d323a;
 	--text-color: #f9fafb;
 	--border-color: #262a30;
 }

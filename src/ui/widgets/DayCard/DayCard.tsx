@@ -38,9 +38,15 @@ const DayCard = ({
 }: CardProps) => {
 	return (
 		<article
-			className={cc(styles.card, styles[`card--${variant}`], styles[`card--${theme}`], className)}
+			className={cc(
+				styles.card,
+				styles[`card--${variant}`],
+				styles[`card--${theme}`],
+				isDayOff && styles.dayOff,
+				className
+			)}
 		>
-			<header className={cc(styles.cardHeader, isDayOff && styles.dayOff)}>
+			<header className={cc(styles.cardHeader)}>
 				<time className={styles.date}>{new Date(date).getDate()}</time>
 				<p className={styles.event}>{event}</p>
 			</header>
@@ -67,7 +73,7 @@ const DayCard = ({
 				)}
 			</div>
 
-			<footer className={styles.cardFooter}>
+			{/* <footer className={styles.cardFooter}>
 				{variant === 'cell' ? (
 					<>
 						<div className={styles.cookingTime}>⏱️ {cookingTime}</div>
@@ -84,7 +90,7 @@ const DayCard = ({
 						</div>
 					</>
 				)}
-			</footer>
+			</footer> */}
 		</article>
 	)
 }

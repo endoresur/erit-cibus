@@ -1,8 +1,14 @@
 .calendarRoot {
 	width: 100%;
+	// background-color: var(--ac-bg-color);
+	// padding: var(--spacing-base);
+	padding: rem(4);
+	border-radius: rem(12);
 
 	.title {
-		text-align: end;
+		display: none;
+		// text-align: end;
+		padding-inline: rem(20);
 		margin-bottom: var(--spacing-base);
 	}
 
@@ -14,15 +20,13 @@
 
 		.dayCardWrapper {
 			height: 100%;
-			padding: rem(4);
+			padding: rem(2);
 			border-radius: rem(16);
 			transition: scale 100ms ease;
 
 			&:hover {
-				scale: 1.03;
-
 				& .dayCard {
-					box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+					box-shadow: var(--dark-shadow);
 				}
 			}
 		}
@@ -31,9 +35,12 @@
 			height: 100%;
 		}
 
-		.isToday article {
-			border-color: var(--blue900);
-			border: rem(1) solid var(--blue900);
+		.isToday article header time {
+			// border-color: var(--blue900);
+			// border: rem(1) solid var(--blue900);
+			// border: rem(1) solid var(--ac-text-color);
+			// background-color: var(--ac-text-color);
+			// color: var(--ac-text-color);
 		}
 
 		.mon {
