@@ -1,0 +1,175 @@
+@keyframes contentExpand {
+	from {
+		max-height: 40px;
+	}
+	to {
+		max-height: 300px;
+	}
+}
+
+.scheduleBlockRoot {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	padding: var(--spacing-x2);
+	border-radius: var(--xs-rounding);
+
+	.content {
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+
+		&:hover .descriptionText {
+			-webkit-line-clamp: unset;
+			-webkit-box-orient: unset;
+			white-space: normal;
+		}
+
+		.title {
+			margin-bottom: var(--spacing-base);
+		}
+
+		.description {
+		}
+
+		.descriptionText {
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			transition: max-height 0.5s ease;
+
+			animation-fill-mode: forwards;
+
+			&--hovered {
+				animation: ease contentExpand 0.5s;
+			}
+		}
+	}
+
+	// Notes
+	&.note {
+		--night-bg: rgb(243 232 255);
+		--morning-bg: rgb(220 252 231);
+		--afternoon-bg: rgb(219 234 254);
+		--evening-bg: rgb(254 249 195);
+
+		--night-accent: rgb(126 34 206);
+		--morning-accent: rgb(21 128 61);
+		--afternoon-accent: rgb(29 78 216);
+		--evening-accent: rgb(161 98 7);
+
+		background-color: var(--bg-color);
+
+		.title {
+			@include body-medium;
+
+			width: fit-content;
+			border-radius: var(--s-rounding);
+			padding: rem(4) var(--spacing-base);
+		}
+
+		&.night {
+			.title {
+				color: var(--night-accent);
+				background-color: var(--night-bg);
+			}
+		}
+
+		&.morning {
+			.title {
+				color: var(--morning-accent);
+				background-color: var(--morning-bg);
+			}
+		}
+
+		&.afternoon {
+			.title {
+				color: var(--afternoon-accent);
+				background-color: var(--afternoon-bg);
+			}
+		}
+
+		&.evening {
+			.title {
+				color: var(--evening-accent);
+				background-color: var(--evening-bg);
+			}
+		}
+	}
+
+	// Meal
+	&.meal {
+		.title {
+			@include large-medium;
+		}
+
+		--night-bg: rgb(243 244 246);
+		--breakfast-bg: rgb(239, 246, 255);
+		--lunch-bg: rgb(240, 253, 244);
+		--dinner-bg: rgb(255, 247, 237);
+
+		--night-accent: rgb(79 70 229);
+		--breakfast-accent: rgb(147, 197, 253);
+		--lunch-accent: rgb(134, 239, 172);
+		--dinner-accent: rgb(253, 186, 116);
+
+		&.night {
+			border-inline-start: rem(6) solid var(--night-accent);
+			background-color: var(--night-bg);
+		}
+
+		&.morning {
+			border-inline-start: rem(6) solid var(--breakfast-accent);
+			background-color: var(--breakfast-bg);
+		}
+
+		&.afternoon {
+			border-inline-start: rem(6) solid var(--lunch-accent);
+			background-color: var(--lunch-bg);
+		}
+
+		&.evening {
+			border-inline-start: rem(6) solid var(--dinner-accent);
+			background-color: var(--dinner-bg);
+		}
+	}
+
+	// Event
+	&.event {
+		--night-bg: rgb(243 244 246);
+		--morning-bg: rgb(255 251 235);
+		--afternoon-bg: rgb(239 246 255);
+		--evening-bg: rgb(238 242 255);
+
+		--night-accent: rgb(79 70 229);
+		--morning-accent: rgb(253 224 71);
+		--afternoon-accent: rgb(96 165 250);
+		--evening-accent: rgb(129 140 248);
+
+		.title {
+			@include large-medium;
+		}
+
+		&.night {
+			border-inline-start: rem(6) solid var(--night-accent);
+			background-color: var(--night-bg);
+		}
+
+		&.morning {
+			border-inline-start: rem(6) solid var(--morning-accent);
+			background-color: var(--morning-bg);
+		}
+
+		&.afternoon {
+			border-inline-start: rem(6) solid var(--afternoon-accent);
+			background-color: var(--afternoon-bg);
+		}
+
+		&.evening {
+			border-inline-start: rem(6) solid var(--evening-accent);
+			background-color: var(--evening-bg);
+		}
+	}
+}

@@ -1,7 +1,6 @@
-// App support only desktop version. Breakpoint is only for correct rem function
-$desktop: 1920px;
-$mobile: 768px;
+$desktop: 1440px;
 $tablet: 1024px;
+$mobile: 768px;
 
 /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
 :export {

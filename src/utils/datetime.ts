@@ -1,5 +1,5 @@
 import { isValid, set } from 'date-fns'
-import { WeekDays } from 'types/calendar'
+import { WeekDays, weekDaysNames } from 'types/calendar'
 
 export const joinDatetimeISO = (date: Date, time: Date) => {
 	const isValidDate = isValid(date)
@@ -32,4 +32,10 @@ export function getWeekDayIndexByDate(dateStr: string) {
 	}
 
 	return getWeekDayIndex(date.getDay())
+}
+
+export function getDayName(date: string) {
+	const day = getWeekDayByIndex(getWeekDayIndexByDate(date))
+
+	return day ? weekDaysNames[day] : undefined
 }

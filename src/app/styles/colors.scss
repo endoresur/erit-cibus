@@ -29,6 +29,7 @@ html[data-theme='light'] {
 	--ac-text-color: var(--blue900);
 	--content-bg: #fff;
 	--text-color: #111827;
+	--secondary-text-color: var(--gray500);
 	--border-color: #e5e7eb;
 }
 
@@ -63,5 +64,6 @@ html[data-theme='dark'] {
 	--ac-text-color: var(--blue900);
 	--content-bg: #2d323a;
 	--text-color: #f9fafb;
+	--secondary-text-color: var(--gray500);
 	--border-color: #262a30;
 }

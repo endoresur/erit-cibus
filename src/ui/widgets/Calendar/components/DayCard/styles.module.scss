@@ -1,0 +1,34 @@
+.dayCardRoot {
+	background-color: var(--content-bg);
+
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		padding: var(--spacing-x2) 0 var(--spacing-base);
+		border-bottom: 1px solid var(--border-color);
+
+		.day,
+		.date {
+			display: block;
+		}
+
+		.day {
+			@include body-medium;
+			color: var(--secondary-text-color);
+		}
+
+		.date {
+			@include xlarge-medium;
+		}
+	}
+
+	.dayCardBody {
+		padding: var(--spacing-base);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-x2);
+	}
+}

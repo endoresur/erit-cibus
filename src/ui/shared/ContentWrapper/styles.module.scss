@@ -1,0 +1,22 @@
+.contentWrapperRoot {
+	--tw-ring-offset-shadow: 0 0 #0000;
+	--tw-ring-shadow: 0 0 #0000;
+	--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+	background-color: var(--content-bg);
+	border-radius: var(--s-rounding);
+
+	overflow: hidden;
+
+	box-shadow:
+		var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.variant {
+	&--default {
+		padding: var(--spacing-x4) var(--spacing-x5);
+	}
+	&--fullWidth {
+		padding: 0;
+	}
+}

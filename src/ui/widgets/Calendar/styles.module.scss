@@ -1,98 +1,77 @@
 .calendarRoot {
-	width: 100%;
-	// background-color: var(--ac-bg-color);
-	// padding: var(--spacing-base);
-	padding: rem(4);
-	border-radius: rem(12);
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 
-	.title {
-		display: none;
-		// text-align: end;
-		padding-inline: rem(20);
-		margin-bottom: var(--spacing-base);
+		margin-bottom: var(--spacing-x4);
+
+		.titleWrapper {
+			.title {
+				@include header4;
+				font-weight: 600;
+			}
+
+			.date {
+				@include body-regular;
+				color: var(--secondary-text-color);
+			}
+		}
+
+		.actionsWrapper {
+			display: flex;
+			gap: var(--spacing-x2);
+		}
 	}
 
-	.calendarGrid {
-		display: grid;
-		grid-template-columns: repeat(7, 1fr);
-		grid-template-rows: repeat(6, auto);
-		grid-template-areas: 'mon tue wed thu fri sat sun';
+	.content {
+		.calendar {
+			.calendarHeader {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 
-		.dayCardWrapper {
-			height: 100%;
-			padding: rem(2);
-			border-radius: rem(16);
-			transition: scale 100ms ease;
+				padding: var(--spacing-x2);
+				border-bottom: 1px solid var(--border-color);
 
-			&:hover {
-				& .dayCard {
-					box-shadow: var(--dark-shadow);
+				.action {
+					width: rem(24);
+					height: rem(24);
+
+					cursor: pointer;
+
+					& svg {
+						width: 100%;
+						height: 100%;
+
+						& path {
+							stroke: var(--secondary-text-color);
+						}
+					}
+				}
+
+				.date {
+					@include xlarge-medium;
 				}
 			}
 		}
 
-		.dayCard {
-			height: 100%;
-		}
+		.calendarGrid {
+			background-color: var(--border-color);
 
-		.isToday article header time {
-			// border-color: var(--blue900);
-			// border: rem(1) solid var(--blue900);
-			// border: rem(1) solid var(--ac-text-color);
-			// background-color: var(--ac-text-color);
-			// color: var(--ac-text-color);
-		}
+			.days,
+			.week {
+				display: grid;
+				gap: 0.8px;
+				background-color: var(--border-color);
+			}
+			.days {
+				grid-template-columns: repeat(3, 1fr);
+			}
 
-		.mon {
-			grid-area: mon;
-		}
-
-		.tue {
-			grid-area: tue;
-		}
-
-		.wed {
-			grid-area: wed;
-		}
-
-		.thu {
-			grid-area: thu;
-		}
-
-		.fri {
-			grid-area: fri;
-		}
-
-		.sat {
-			grid-area: sat;
-		}
-
-		.sun {
-			grid-area: sun;
-		}
-
-		.week1 {
-			grid-row: 1 / 2;
-		}
-
-		.week2 {
-			grid-row: 2 / 3;
-		}
-
-		.week3 {
-			grid-row: 3 / 4;
-		}
-
-		.week4 {
-			grid-row: 4 / 5;
-		}
-
-		.week5 {
-			grid-row: 5 / 6;
-		}
-
-		.week6 {
-			grid-row: 6 / 7;
+			.week {
+				grid-template-columns: repeat(7, 1fr);
+			}
 		}
 	}
 }
