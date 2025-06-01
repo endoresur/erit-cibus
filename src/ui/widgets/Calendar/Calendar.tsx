@@ -12,14 +12,21 @@ interface Props {
 	className?: string
 }
 
+enum DaysGrid {
+	THREE_DAYS = 'days',
+	WEEK = 'week',
+	MONTH = 'month'
+}
+
 const daysGridOptions: Option[] = [
-	{ label: '3 Дня', value: 'days' },
-	{ label: 'Неделя', value: 'week' },
-	{ label: 'Месяц', value: 'month' }
+	{ label: '3 Дня', value: DaysGrid.THREE_DAYS },
+	{ label: 'Неделя', value: DaysGrid.WEEK },
+	{ label: 'Месяц', value: DaysGrid.MONTH }
 ]
 
 const Calendar = ({ className }: Props) => {
-	const cards = Array(6).fill('0')
+	const [cards, setCards] = useState(Array(3).fill('0'))
+
 	const [activeDay, setActiveDay] = useState(new Date().toISOString())
 	const [daysGridValue, setDaysGridValue] = useState('days')
 
@@ -27,7 +34,23 @@ const Calendar = ({ className }: Props) => {
 
 	const onPrevDayClick = () => setActiveDay(sub(activeDay, { days: 1 }).toISOString())
 
-	const onDaysGridChange = (value: string) => setDaysGridValue(value)
+	const onDaysGridChange = (value: string) => {
+		setDaysGridValue(value)
+
+		switch (value) {
+			case DaysGrid.THREE_DAYS:
+				setCards(Array(3).fill('0'))
+				break
+			case DaysGrid.WEEK:
+				setCards(Array(7).fill('0'))
+				break
+			case DaysGrid.MONTH:
+				setCards(Array(30).fill('0'))
+				break
+			default:
+				break
+		}
+	}
 
 	return (
 		<section className={cc(styles.calendarRoot, className)}>
@@ -63,9 +86,12 @@ const Calendar = ({ className }: Props) => {
 					<div className={styles.calendarGrid}>
 						{/* <div className={styles.days}> */}
 						<div className={styles[`${daysGridValue}`]}>
-							<DayCard date={sub(activeDay, { days: 1 }).toISOString()} />
+							{/* <DayCard date={sub(activeDay, { days: 1 }).toISOString()} />
 							<DayCard date={activeDay} />
-							<DayCard date={add(activeDay, { days: 1 }).toISOString()} />
+							<DayCard date={add(activeDay, { days: 1 }).toISOString()} /> */}
+							{cards.map((_, index) => (
+								<DayCard key={index} date={activeDay} />
+							))}
 						</div>
 					</div>
 				</div>

@@ -1,9 +1,15 @@
 @keyframes contentExpand {
 	from {
-		max-height: 40px;
+		max-height: rem(60);
+	}
+	99% {
+		-webkit-line-clamp: unset;
+		-webkit-box-orient: unset;
 	}
 	to {
-		max-height: 300px;
+		max-height: 120px;
+		-webkit-line-clamp: unset;
+		-webkit-box-orient: unset;
 	}
 }
 
@@ -20,8 +26,6 @@
 		transition: max-height 0.3s ease;
 
 		&:hover .descriptionText {
-			-webkit-line-clamp: unset;
-			-webkit-box-orient: unset;
 			white-space: normal;
 		}
 
@@ -38,12 +42,11 @@
 			-webkit-box-orient: vertical;
 			overflow: hidden;
 			text-overflow: ellipsis;
-			transition: max-height 0.5s ease;
 
-			animation-fill-mode: forwards;
+			max-height: 60px;
 
 			&--hovered {
-				animation: ease contentExpand 0.5s;
+				animation: ease contentExpand 0.2s forwards;
 			}
 		}
 	}

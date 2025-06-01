@@ -22,12 +22,9 @@ const ScheduleBlock = ({ title, actions, description, variant, dayInterval, clas
 				<div className={styles.title}>{title}</div>
 				<p
 					className={cc(
-						styles.descriptionText,
+						styles.description,
 						typeof description === 'string' &&
-							cc(
-								styles.descriptionText,
-								isDescriptionHovered && styles[`descriptionText--hovered'}`]
-							)
+							cc(styles.descriptionText, isDescriptionHovered && styles[`descriptionText--hovered`])
 					)}
 					ref={descriptionRef}
 				>
