@@ -37,3 +37,12 @@ export const dayIntervalsNames: Record<DayIntervals, string> = {
 	[DayIntervals.EVENING]: 'Вечер',
 	[DayIntervals.NIGHT]: 'Ночь'
 }
+
+export interface ScheduleBlock {
+	id: string
+	title: string
+	description?: string
+	variant: ScheduleBlockVarints
+	dayInterval: DayIntervals
+	date: string // ISO date string
+}

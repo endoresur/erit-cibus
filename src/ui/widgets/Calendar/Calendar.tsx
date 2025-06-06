@@ -7,44 +7,39 @@ import { useState } from 'react'
 import { add, sub } from 'date-fns'
 import MultiSwitch from 'ui/features/MultiSwitch'
 import { Option } from 'types/common'
+import { DaysDisplayVariants } from './types'
 
 interface Props {
 	className?: string
 }
 
-enum DaysGrid {
-	THREE_DAYS = 'days',
-	WEEK = 'week',
-	MONTH = 'month'
-}
-
 const daysGridOptions: Option[] = [
-	{ label: '3 Дня', value: DaysGrid.THREE_DAYS },
-	{ label: 'Неделя', value: DaysGrid.WEEK },
-	{ label: 'Месяц', value: DaysGrid.MONTH }
+	{ label: '3 Дня', value: DaysDisplayVariants.THREE_DAYS },
+	{ label: 'Неделя', value: DaysDisplayVariants.WEEK },
+	{ label: 'Месяц', value: DaysDisplayVariants.MONTH }
 ]
 
 const Calendar = ({ className }: Props) => {
-	const [cards, setCards] = useState(Array(3).fill('0'))
+	const [cards, setCards] = useState(Array(7).fill('0'))
 
 	const [activeDay, setActiveDay] = useState(new Date().toISOString())
-	const [daysGridValue, setDaysGridValue] = useState('days')
+	const [daysGridValue, setDaysGridValue] = useState<DaysDisplayVariants>(DaysDisplayVariants.WEEK)
 
 	const onNextDayClick = () => setActiveDay(add(activeDay, { days: 1 }).toISOString())
 
 	const onPrevDayClick = () => setActiveDay(sub(activeDay, { days: 1 }).toISOString())
 
-	const onDaysGridChange = (value: string) => {
+	const onDaysGridChange = (value: DaysDisplayVariants) => {
 		setDaysGridValue(value)
 
 		switch (value) {
-			case DaysGrid.THREE_DAYS:
+			case DaysDisplayVariants.THREE_DAYS:
 				setCards(Array(3).fill('0'))
 				break
-			case DaysGrid.WEEK:
+			case DaysDisplayVariants.WEEK:
 				setCards(Array(7).fill('0'))
 				break
-			case DaysGrid.MONTH:
+			case DaysDisplayVariants.MONTH:
 				setCards(Array(30).fill('0'))
 				break
 			default:
@@ -90,7 +85,7 @@ const Calendar = ({ className }: Props) => {
 							<DayCard date={activeDay} />
 							<DayCard date={add(activeDay, { days: 1 }).toISOString()} /> */}
 							{cards.map((_, index) => (
-								<DayCard key={index} date={activeDay} />
+								<DayCard key={index} date={activeDay} variant={daysGridValue} />
 							))}
 						</div>
 					</div>

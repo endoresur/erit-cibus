@@ -18,7 +18,7 @@
 	justify-content: space-between;
 	align-items: flex-start;
 
-	padding: var(--spacing-x2);
+	padding: var(--spacing-base) rem(12);
 	border-radius: var(--xs-rounding);
 
 	.content {
@@ -30,10 +30,20 @@
 		}
 
 		.title {
-			margin-bottom: var(--spacing-base);
+			margin-bottom: rem(6);
+			color: var(--text-color);
+
+			@include dark {
+				color: var(--gray50);
+			}
 		}
 
 		.description {
+			color: var(--secondary-text-color);
+
+			@include dark {
+				color: var(--gray400);
+			}
 		}
 
 		.descriptionText {
@@ -49,6 +59,10 @@
 				animation: ease contentExpand 0.2s forwards;
 			}
 		}
+	}
+
+	.actions {
+		stroke: var(--text-color);
 	}
 
 	// Notes
@@ -173,6 +187,37 @@
 		&.evening {
 			border-inline-start: rem(6) solid var(--evening-accent);
 			background-color: var(--evening-bg);
+		}
+	}
+}
+
+.small {
+	&.scheduleBlockRoot {
+		padding: var(--spacing-base) rem(6);
+		border-color: transparent !important;
+
+		.title {
+			@include body-medium;
+			margin-bottom: rem(2);
+		}
+
+		.description,
+		.descriptionText {
+			@include small-regular;
+
+			&--hovered {
+				animation: none;
+			}
+		}
+
+		.actions {
+			width: rem(24);
+			height: rem(24);
+
+			& svg {
+				height: 100%;
+				width: 100%;
+			}
 		}
 	}
 }

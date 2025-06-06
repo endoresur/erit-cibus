@@ -1,5 +1,16 @@
 .dayCardRoot {
 	background-color: var(--content-bg);
+	transition: background-color 200ms ease;
+
+	&:hover {
+		background-color: var(--ac-bg-color);
+	}
+
+	@include dark {
+		&:hover {
+			background-color: var(--gray200);
+		}
+	}
 
 	.header {
 		display: flex;
@@ -30,5 +41,23 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing-x2);
+	}
+}
+
+.month {
+	.header {
+		padding: var(--spacing-base) 0 rem(4);
+
+		.day {
+			@include small-medium;
+		}
+
+		.date {
+			@include large-medium;
+		}
+	}
+
+	.dayCardBody {
+		gap: rem(4);
 	}
 }
