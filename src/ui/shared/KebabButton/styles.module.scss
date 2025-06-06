@@ -1,0 +1,64 @@
+.kebabButtonRoot {
+	position: relative;
+	cursor: pointer;
+
+	width: 100%;
+	height: 100%;
+
+	.button {
+		width: 100%;
+		height: 100%;
+	}
+
+	.list {
+		position: absolute;
+
+		padding: var(--spacing-base) rem(4);
+		border-radius: var(--xxs-rounding);
+
+		background-color: var(--content-bg);
+		box-shadow: var(--modal-shadow);
+
+		li {
+			display: block;
+			width: 100%;
+			padding-inline: rem(4);
+
+			background-color: transparent;
+			transition: background-color 200ms ease;
+
+			&:hover {
+				background-color: var(--bg-color);
+			}
+		}
+
+		& button {
+			width: 100%;
+
+			@include body-medium;
+			color: var(--text-color);
+
+			text-align: left;
+		}
+	}
+
+	.leftBottom {
+		top: 100%;
+		right: 0;
+	}
+
+	.rightBottom {
+		top: 100%;
+		left: 0;
+	}
+
+	.leftTop {
+		bottom: 100%;
+		right: 0;
+	}
+
+	.rightTop {
+		bottom: 100%;
+		left: 0;
+	}
+}
