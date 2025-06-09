@@ -79,6 +79,14 @@
 
 		background-color: var(--bg-color);
 
+		@include dark {
+			background-color: var(--gray400);
+
+			.description {
+				color: var(--gray700);
+			}
+		}
+
 		.title {
 			@include body-medium;
 

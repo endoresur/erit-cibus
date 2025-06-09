@@ -1,18 +1,26 @@
-import { JSX } from 'react'
+import { JSX, useEffect, useState } from 'react'
 import styles from './styles.module.scss'
 import { ActionOption } from 'types/common'
 import { useHover } from '@uidotdev/usehooks'
 import { cc } from 'utils/combineClasses'
+import { debounce } from 'utils/common'
 
 interface Props {
 	items: ActionOption[]
 	children: JSX.Element
 	position?: 'leftTop' | 'leftBottom' | 'rightTop' | 'rightBottom'
+	delay?: number
 	className?: string
 }
 
-const KebabButton = ({ items, children, position = 'leftBottom', className }: Props) => {
+const KebabButton = ({ items, children, position = 'leftBottom', delay = 0, className }: Props) => {
 	const [rootRef, isHovered] = useHover()
+	const [isCurrentHovered, setIsCurrentHovered] = useState(false)
+
+	useEffect(() => {
+		debounce(() => setIsCurrentHovered(isHovered), delay)()
+	}, [isHovered])
+
 	return (
 		<div className={cc(styles.kebabButtonRoot, className)} ref={rootRef}>
 			<button
@@ -24,7 +32,7 @@ const KebabButton = ({ items, children, position = 'leftBottom', className }: Pr
 				{children}
 			</button>
 
-			{isHovered && (
+			{isCurrentHovered && (
 				<ul className={cc(styles.list, styles[position])}>
 					{items.map((item, index) => (
 						<li key={index}>
