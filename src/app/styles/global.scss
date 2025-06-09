@@ -8,10 +8,7 @@
 	// 1920 / 100 * x = 16;
 	// x = 0.833
 	font-size: clamp(8px, 0.833vw, 16px);
-	font-family: serif;
-	font-family: Avenir, Helvetica, Arial, sans-serif;
 	direction: ltr;
-
 	color-scheme: light dark;
 }
 

@@ -1,0 +1,63 @@
+.dayCardRoot {
+	background-color: var(--content-bg);
+	transition: background-color 200ms ease;
+
+	&:hover {
+		background-color: var(--ac-bg-color);
+	}
+
+	@include dark {
+		&:hover {
+			background-color: var(--gray200);
+		}
+	}
+
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		padding: var(--spacing-x2) 0 var(--spacing-base);
+		border-bottom: 1px solid var(--border-color);
+
+		.day,
+		.date {
+			display: block;
+		}
+
+		.day {
+			@include body-medium;
+			color: var(--secondary-text-color);
+		}
+
+		.date {
+			@include xlarge-medium;
+		}
+	}
+
+	.dayCardBody {
+		padding: var(--spacing-base);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-x2);
+	}
+}
+
+.month {
+	.header {
+		padding: var(--spacing-base) 0 rem(4);
+
+		.day {
+			@include small-medium;
+		}
+
+		.date {
+			@include large-medium;
+		}
+	}
+
+	.dayCardBody {
+		gap: rem(4);
+	}
+}

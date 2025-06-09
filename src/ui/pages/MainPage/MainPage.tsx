@@ -5,7 +5,7 @@ import { may2025Cards } from './mock'
 const MainPage = () => {
 	return (
 		<main className={styles.mainPageRoot}>
-			<Calendar cards={may2025Cards} />
+			<Calendar />
 		</main>
 	)
 }

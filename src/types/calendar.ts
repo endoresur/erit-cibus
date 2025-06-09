@@ -1,3 +1,9 @@
+export enum ScheduleBlockVarints {
+	EVENT = 'event',
+	MEAL = 'meal',
+	NOTE = 'note'
+}
+
 export enum WeekDays {
 	MON = 'mon',
 	TUE = 'tue',
@@ -16,4 +22,27 @@ export const weekDaysNames: Record<WeekDays, string> = {
 	[WeekDays.FRI]: 'Пятница',
 	[WeekDays.SAT]: 'Суббота',
 	[WeekDays.SUN]: 'Воскресенье'
+}
+
+export enum DayIntervals {
+	MORNING = 'morning',
+	AFTERNOON = 'afternoon',
+	EVENING = 'evening',
+	NIGHT = 'night'
+}
+
+export const dayIntervalsNames: Record<DayIntervals, string> = {
+	[DayIntervals.MORNING]: 'Утро',
+	[DayIntervals.AFTERNOON]: 'День',
+	[DayIntervals.EVENING]: 'Вечер',
+	[DayIntervals.NIGHT]: 'Ночь'
+}
+
+export interface ScheduleBlock {
+	id: string
+	title: string
+	description?: string
+	variant: ScheduleBlockVarints
+	dayInterval: DayIntervals
+	date: string // ISO date string
 }
