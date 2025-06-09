@@ -21,7 +21,7 @@ import {
 import MultiSwitch from 'ui/features/MultiSwitch'
 import { Option } from 'types/common'
 import { DaysDisplayVariants } from './types'
-import { PlannerItemCard } from 'types/calendar'
+import { monthsNames, montIndexToMonth, PlannerItemCard } from 'types/calendar'
 import { getWeekDayIndexByDate } from 'utils/datetime'
 
 interface Props {
@@ -173,7 +173,7 @@ const Calendar = ({ plannedDays, className }: Props) => {
 		<section className={cc(styles.calendarRoot, className)}>
 			<header className={styles.header}>
 				<div className={styles.titleWrapper}>
-					<h2 className={styles.title}>Your Meal Plan</h2>
+					<h2 className={styles.title}>План питания</h2>
 					{displayedCard && (
 						<time className={styles.date}>
 							{format(displayedCard[0].date, 'd MMMM')}
@@ -194,7 +194,6 @@ const Calendar = ({ plannedDays, className }: Props) => {
 							onChange={onDaysGridChange}
 						/>
 					</div>
-					<div>action</div>
 				</div>
 			</header>
 
@@ -204,7 +203,10 @@ const Calendar = ({ plannedDays, className }: Props) => {
 						<div className={styles.action} onClick={onPrevDayClick}>
 							<ChevronLeft />
 						</div>
-						<time className={styles.date}>{format(activeDate, 'MMMM yyyy')}</time>
+						<time className={styles.date}>
+							{monthsNames[montIndexToMonth[Number(format(activeDate, 'M')) - 1]]}{' '}
+							{format(activeDate, 'yyyy')}
+						</time>
 						<div className={styles.action} onClick={onNextDayClick}>
 							<ChevronRight />
 						</div>
