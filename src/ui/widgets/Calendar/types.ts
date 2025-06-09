@@ -6,6 +6,7 @@ export interface RoundedSide {
 }
 
 export enum DaysDisplayVariants {
+	DEFAULT = 'default',
 	THREE_DAYS = 'days',
 	WEEK = 'week',
 	MONTH = 'month'

@@ -38,11 +38,17 @@ export const dayIntervalsNames: Record<DayIntervals, string> = {
 	[DayIntervals.NIGHT]: 'Ночь'
 }
 
-export interface ScheduleBlock {
+export interface DailyEntry {
 	id: string
 	title: string
-	description?: string
-	variant: ScheduleBlockVarints
-	dayInterval: DayIntervals
-	date: string // ISO date string
+	description: string
+}
+
+export interface PlannerItemCard {
+	id: string
+	date: string
+	breakfast?: DailyEntry
+	lunch?: DailyEntry
+	dinner?: DailyEntry
+	notes?: DailyEntry[]
 }
